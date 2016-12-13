@@ -19,7 +19,7 @@ import cn.springmvc.service.PerUserService;
  
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/perUser")
 public class PerUserController {
 	
 	Logger logger=LoggerFactory.getLogger(PerUserController.class);
@@ -27,7 +27,7 @@ public class PerUserController {
 	@Autowired
 	private PerUserService perUserService;
 
-	 @RequestMapping("userLogin")  
+	/* @RequestMapping("/login")  
 	    public ModelAndView userLogin(@ModelAttribute PerUser user) {  
 	        //@ModelAttribute 注解代表用模型来接收值，User对象里面的属性要和jsp页面的属性对应  
 	        System.out.println(user.getUserName());  
@@ -38,13 +38,14 @@ public class PerUserController {
 	        return mv;  
 	    }  
 	 
-	    @RequestMapping("index")  
+	    @RequestMapping("/index")  
 	    public String index(){  
 	        return "index";  
-	    } 
+	    } */
 	    
 	    @RequestMapping(value="/login",method={RequestMethod.POST})
-	    public ModelAndView loginPerUser(@ModelAttribute PerUser perUser){
+	    public ModelAndView loginPerUser(@ModelAttribute("perUser") PerUser perUser){
+	    	logger.debug("*****"+perUser);
 	    	if(1!=perUserService.insertSelective(perUser)){
 	    		logger.info("**********失败了");
 	    		return new ModelAndView();

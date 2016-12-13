@@ -323,7 +323,7 @@
     </dependencies>
     <build>
 
-        <finalName>springmvc</finalName>
+        <finalName>firsttest</finalName>
         
         
 		<resources>
