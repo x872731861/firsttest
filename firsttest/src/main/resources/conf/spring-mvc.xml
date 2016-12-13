@@ -24,6 +24,7 @@
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Repository" />
 	</context:component-scan>
+	 
    
    <!-- 避免IE在ajax请求时，返回json出现下载 -->
    <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">		
